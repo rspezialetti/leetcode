@@ -58,4 +58,24 @@ public:
     
         return sum;
     }
+    /* Complexity Analysis Time complexity : O(n) Space complexity : O(D) D = max level of nesting */
+    int depthSum(vector<NestedInteger>& nestedList, int depth)
+    {
+        int result = 0;
+
+        for(auto n : nestedList)
+        {
+            if(n.isInteger())
+                result += depth * n.getInteger();
+            else
+                result += depthSum(n.getList(), depth  + 1);
+        }
+
+        return result;
+      }
+
+      int depthSum(vector<NestedInteger>& nestedList)
+      {
+          return depthSum(nestedList, 1);
+      }
 };
