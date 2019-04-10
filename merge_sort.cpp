@@ -36,7 +36,7 @@ void mergeVector(vector<int>&  left, vector<int>&  right, vector<int>&  merged)
     }
 }
 
-
+/*Time Complexity: O(nlogn) Space Complexity: O(n)*/
 void mergeSort(vector<int>& numbers)
 {
     if(numbers.size() < 2)
